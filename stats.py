@@ -19,3 +19,12 @@ def get_character_counts(input_string):
             # increment the char's counter by 1
             dict[char] += 1
     return dict
+
+def dict_sorter(dict):
+    def sorting_fn(i):
+        return i["value"]
+    list = []
+    for key, value in dict.items():
+        list.append({"key": key, "value": value})
+    list.sort(reverse=True, key=sorting_fn)
+    return list
